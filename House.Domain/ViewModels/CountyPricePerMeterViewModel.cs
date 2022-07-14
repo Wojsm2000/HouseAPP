@@ -9,8 +9,8 @@ namespace House.Domain.ViewModels
     public class CountyPricePerMeterViewModel
     {
         
-        public string County { get; internal set; }
-        public int PricePerMeter { get; internal set; }
+        public string County { get; set; }
+        public int PricePerMeter { get; set; }
     }
 
 
