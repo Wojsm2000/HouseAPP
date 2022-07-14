@@ -8,5 +8,11 @@ namespace House.Domain.Models
 {
     internal class House
     {
+        int Id;
+        string City;
+        decimal Price;
+        double Area;
+
+
     }
 }
