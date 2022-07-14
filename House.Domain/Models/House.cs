@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace House.Domain.Models
 {
-    internal class House
+    public class House
     {
-        int Id;
-        string City;
-        decimal Price;
-        double Area;
-
-
+        public int Id;
+        public string City;
+        public decimal Price;
+        public double Area;
     }
 }
