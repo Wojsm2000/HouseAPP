@@ -1,4 +1,5 @@
-﻿using House.Domain.ViewModels;
+﻿using House.DAL;
+using House.Domain.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,20 +9,18 @@ namespace House.WebApi.Controllers
     [ApiController]
     public class HouseController : ControllerBase
     {
-        private readonly List<CountyPricePerMeterViewModel> _countyPricePerMeterViewModels = new List<CountyPricePerMeterViewModel>()
+        private readonly HouseContext _context;
+
+        public HouseController(HouseContext context)
         {
-            new CountyPricePerMeterViewModel() { County = "łódzkie", PricePerMeter = 7800 },
-            new CountyPricePerMeterViewModel() { County = "świętokrzyskie", PricePerMeter = 9000 },
-            new CountyPricePerMeterViewModel() { County = "mazowieckie", PricePerMeter = 3000 },
-            new CountyPricePerMeterViewModel() { County = "pomorskie", PricePerMeter = 5000 },
-            new CountyPricePerMeterViewModel() { County = "małopolskie", PricePerMeter = 3200 },
-            new CountyPricePerMeterViewModel() { County = "podkarpackie", PricePerMeter = 4000 }
-        };
+            _context = context;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_countyPricePerMeterViewModels);
+            var houses = _context.Houses.ToList();
+            return Ok(houses);
         }
     }
 }
