@@ -1,6 +1,4 @@
-﻿using House.DAL;
-using House.Domain.ViewModels;
-using Microsoft.AspNetCore.Http;
+﻿using House.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace House.WebApi.Controllers
@@ -9,18 +7,17 @@ namespace House.WebApi.Controllers
     [ApiController]
     public class HouseController : ControllerBase
     {
-        private readonly HouseContext _context;
+        private readonly IHouseService _houseService;
 
-        public HouseController(HouseContext context)
+        public HouseController(IHouseService houseService)
         {
-            _context = context;
+            _houseService = houseService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var houses = _context.Houses.ToList();
-            return Ok(houses);
+            return Ok();
         }
     }
 }

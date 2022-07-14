@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House.WebApi", "House.WebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House.Domain", "..\House.Domain\House.Domain.csproj", "{BF37C4A3-BA48-4065-BADC-F7F590C1EA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "House.DAL", "..\House.DAL\House.DAL.csproj", "{B45A5B51-A05D-434C-8A01-2362AC66C91D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{BF37C4A3-BA48-4065-BADC-F7F590C1EA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF37C4A3-BA48-4065-BADC-F7F590C1EA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF37C4A3-BA48-4065-BADC-F7F590C1EA18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B45A5B51-A05D-434C-8A01-2362AC66C91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B45A5B51-A05D-434C-8A01-2362AC66C91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B45A5B51-A05D-434C-8A01-2362AC66C91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B45A5B51-A05D-434C-8A01-2362AC66C91D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
