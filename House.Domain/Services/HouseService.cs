@@ -13,7 +13,38 @@ namespace House.Domain.Services
 
         public IEnumerable<CountyPricePerMeterViewModel> CalculatePricesPerMeterPerCounties()
         {
-            throw new NotImplementedException();
+            //get data from DB:
+            var houses = _houseContext.Houses.ToList();
+
+            //create list to return
+            var viewModels = new List<CountyPricePerMeterViewModel>();
+
+            //get distinct list of counties
+            var counties = houses.Select(p => p.County).Distinct();
+
+            //for each county
+            foreach(var county in counties)
+            {
+                var viewModel = new CountyPricePerMeterViewModel();
+
+                //get houses for each county
+                var housesInCounty = houses.Where(p => p.County == county);
+
+                //for each house in county, calculate the price per meter and put into sum
+                var sum = 0m;
+                foreach(var houseInCounty in housesInCounty)
+                {
+                    var pricePerMeter = houseInCounty.Price / (decimal)houseInCounty.Area;
+                    sum = sum + pricePerMeter;
+                }
+
+                viewModel.County = county;
+                viewModel.AveragePricePerMeter = sum / housesInCounty.Count();
+
+                viewModels.Add(viewModel);
+            }
+
+            return viewModels;
         }
     }
 }

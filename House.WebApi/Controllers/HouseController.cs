@@ -17,7 +17,8 @@ namespace House.WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+            var list = _houseService.CalculatePricesPerMeterPerCounties();
+            return Ok(list);
         }
     }
 }
